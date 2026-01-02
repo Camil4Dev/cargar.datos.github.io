@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Personas por Rubro</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1><i class="fas fa-users"></i> Registro de Personas por Rubro</h1>
+    </header>
+
+    <div id="success-message" class="success-message">
+        <i class="fas fa-check-circle"></i> Persona agregada exitosamente
+    </div>
+
+    <form>
+        <div class="form-group">
+            <label>DNI</label>
+            <i class="fas fa-id-card"></i>
+            <input type="text" id="dni" required>
+        </div>
+
+        <div class="form-group">
+            <label>Zona</label>
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" id="zona" list="zonas-list" required>
+            <datalist id="zonas-list"></datalist>
+        </div>
+
+        <div class="form-group">
+            <label>Rubro</label>
+            <i class="fas fa-briefcase"></i>
+            <select id="rubro" required>
+                <option value="">Seleccionar</option>
+                <option value="panchos">Panchos</option>
+                <option value="bijuterie">Bijuterie</option>
+                <option value="choclos">Choclos</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="ropa">Ropa</option>
+                <option value="licuados">Licuados</option>
+                <option value="pochoclo">Pochoclo</option>
+                <option value="agua caliente">Agua Caliente</option>
+                <option value="producto de miel">Producto de Miel</option>
+                <option value="chipa">Chipa</option>
+                <option value="juguetes">Juguetes</option>
+                <option value="bijuterie trenzas">Bijuterie Trenzas</option>
+                <option value="churro">Churro</option>
+                <option value="ensalada de frutas">Ensalada de Frutas</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Nombre Completo</label>
+            <i class="fas fa-user"></i>
+            <input type="text" id="nombre" required>
+        </div>
+
+        <button type="button" id="agregar">
+            <i class="fas fa-plus"></i> Agregar Persona
+        </button>
+    </form>
+
+    <button id="exportar">
+        <i class="fas fa-file-excel"></i> Exportar a Excel
+    </button>
+
+    <h2>Registros</h2>
+
+    <table id="tabla-registros">
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Zona</th>
+                <th>Rubro</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<footer class="footer">
+    Para programas web contactarse a
+    <a href="https://camila.camiladev.workers.dev" target="_blank" rel="noopener">
+        camila
+    </a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="script/script.js"></script>
+</body>
+</html>
